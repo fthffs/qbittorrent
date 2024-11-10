@@ -1,6 +1,3 @@
-ARG RADARR_VERSION=5.14.0.9383
-ARG QBITTORRENT_VERSION=
-
 # create an up-to-date base image for everything
 FROM alpine:3.20 AS base
 
