@@ -1,0 +1,23 @@
+name: auto-update-version
+# Controls when the action will run. 
+on:
+  schedule:
+    - cron: "0 3 * * *"
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+jobs:
+  auto-update-job:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+        with:
+          token: ${{ secrets.SCRIPT_TOKEN }}
+      - name: configure git
+        run: |
+          git config --global user.email "fthffs@pm.me"
+          git config --global user.name "fthffs"
+          git remote set-url --push origin "https://fthffs:$SCRIPT_TOKEN@github.com/fthffs/dockerfiles"
+      - name: run update.sh
+        run: |
+          echo "Run update.sh"
+          bash .github/scripts/update.sh
