@@ -1,0 +1,9 @@
+.dockerignore
+fileConfig.yml
+traefik.yml
+acme.json
+*.env
+docker-compose.yml
+*.md
+.github
+.git
