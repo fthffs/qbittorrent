@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Checkout repo, grab QBT version
         id: getVersion
-        run: echo "QBT_VERSION=$(grep -o -m 1 'QBT_VERSION=.*' Dockerfile | awk -F '-' '{print $2}')" >> $GITHUB_ENV
+        run: echo "QBT_VERSION=$(grep -o -m 1 'QBT_VERSION=.*' Dockerfile | awk -F '=' '{print $2}')" >> $GITHUB_ENV
         
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
