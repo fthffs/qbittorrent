@@ -12,7 +12,7 @@ jobs:
     permissions:
       packages: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Checkout repo, grab QBT version
         id: getVersion
         run: echo "QBT_VERSION=$(grep -o -m 1 'QBT_VERSION=.*' Dockerfile | awk -F '=' '{print $2}')" >> $GITHUB_ENV
