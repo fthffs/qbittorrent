@@ -18,7 +18,7 @@ jobs:
         run: echo "QBT_VERSION=$(grep -o -m 1 'QBT_VERSION=.*' Dockerfile | awk -F '=' '{print $2}')" >> $GITHUB_ENV
         
       - name: Set up QEMU
-        uses: docker/setup-qemu-action@v3
+        uses: docker/setup-qemu-action@v4
       
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
